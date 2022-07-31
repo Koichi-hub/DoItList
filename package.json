@@ -1,0 +1,34 @@
+{
+  "name": "doitlist",
+  "version": "1.0.0",
+  "description": "ToDo приложение с интересной механикой. React.js + Express.js",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint ./src --fix",
+    "dev": "npm run lint && nodemon ./src",
+    "start": "node ./src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Koichi-hub/DoItList.git"
+  },
+  "author": "Koichi-hub",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Koichi-hub/DoItList/issues"
+  },
+  "homepage": "https://github.com/Koichi-hub/DoItList#readme",
+  "devDependencies": {
+    "eslint": "^8.20.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "nodemon": "^2.0.19"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "log4js": "^6.6.1",
+    "morgan": "^1.10.0"
+  }
+}
