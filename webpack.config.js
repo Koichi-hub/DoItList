@@ -5,7 +5,7 @@ module.exports = {
   entry: './src/index.jsx',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'public/dist'),
   },
   module: {
     rules: [
@@ -24,10 +24,37 @@ module.exports = {
             ],
           }
         }
-      }
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.less$/i,
+        use: [
+          "style-loader",
+          "css-loader",
+          "less-loader",
+        ],
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+      },
     ],
   },
   resolve: {
     extensions: ['.js', '.jsx'],
+  },
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'public'),
+    },
+    compress: true,
+    port: 9000,
   },
 };
