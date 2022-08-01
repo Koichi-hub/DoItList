@@ -4,7 +4,9 @@
   "description": "ToDo приложение с интересной механикой. React.js + Express.js",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint ./src --fix",
+    "deploy": "npx prisma migrate deploy",
+    "migrate": "npx prisma migrate dev --name init",
+    "lint": "npx eslint ./src --fix",
     "dev": "npm run lint && nodemon ./src",
     "start": "node ./src"
   },
